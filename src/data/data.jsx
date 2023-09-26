@@ -13,6 +13,7 @@ const data = [
     overLayTextColor: "#02aee5",
     overLayBG: "#d8f6ff",
     cardID: 1,
+    link: "https://apps.apple.com/app/coolors/id956480678",
   },
   {
     cardImage: <AndroidIcon />,
@@ -22,6 +23,7 @@ const data = [
     overLayTextColor: "#15B789",
     overLayBG: "#D5F8EF",
     cardID: 2,
+    link: "https://play.google.com/store/apps/details?id=co.coolors.android",
   },
   {
     cardImage: <FigmaIcon />,
@@ -31,6 +33,7 @@ const data = [
     overLayTextColor: "#E50087",
     overLayBG: "#FFE5F4",
     cardID: 3,
+    link: "https://www.figma.com/community/plugin/1068919813159975006/Coolors",
   },
   {
     cardImage: <ChromeIcon />,
@@ -40,17 +43,18 @@ const data = [
     overLayTextColor: "#7F2FDE",
     overLayBG: "#E9E2F7",
     cardID: 4,
+    link: "https://chrome.google.com/webstore/detail/coolors-for-chrome/paebljbhhfgngkcldmbcogmkgegjgmbg",
   },
   {
     cardImage: <AdobeIcon />,
     cardTitle: "Adobe Extension",
     cardText: "Use Coolors with your favorite tools",
     overLayText: "Download",
-    overLayTextColor: "#15B789",
-    overLayBG: "#D5F8EF",
+    overLayTextColor: "#DAAB00",
+    overLayBG: "#FDF3CE",
     cardID: 5,
+    link: "https://coolors.co/",
   },
-  
 ];
 
 export default data;
