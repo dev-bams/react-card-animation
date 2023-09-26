@@ -25,7 +25,7 @@ function Card({
       onMouseLeave={hideOverLay}
       className="card-wrapper"
     >
-      <a href={link}>
+      <a className="card__link" href={link}>
         <div className="card js-card">
           <div className="card__logo">{cardImage}</div>
           <h2 className="card__title">{cardTitle}</h2>
