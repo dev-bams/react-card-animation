@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import PropTypes from "prop-types";
 
 function Card({
@@ -48,9 +48,9 @@ function Card({
               backgroundColor: `${overLayBG}`,
             }}
           >
-            <h2 ref={overLayTextContainer} className="card__overlay-text">
+            <h1 ref={overLayTextContainer} className="card__overlay-text">
               {overLayText}
-            </h2>
+            </h1>
           </div>
         </div>
       </a>
