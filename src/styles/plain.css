@@ -79,6 +79,7 @@ body {
   transition: all var(--main-animation-duration);
   top: 100%;
   opacity: 0;
+  text-align: center;
 }
 .card__overlay-text {
   position: absolute;

@@ -17,18 +17,14 @@ function Card({
   }
 
   return (
-    <div
-      onMouseEnter={toggleOverLay}
-      onMouseLeave={toggleOverLay}
-      className="card-wrapper"
-    >
+    <div onMouseEnter={toggleOverLay} onMouseLeave={toggleOverLay}>
       <a
         className="card__link"
         target="_blank"
         rel="noopener noreferrer"
         href={link}
       >
-        <div className="card js-card">
+        <div className="card">
           <div className="card__logo">{cardImage}</div>
           <h2 className="card__title">{cardTitle}</h2>
           <p className="card__text">{cardText}</p>
