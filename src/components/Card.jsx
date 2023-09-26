@@ -8,6 +8,7 @@ function Card({
   overLayText,
   overLayTextColor,
   overLayBG,
+  link
 }) {
   const overlayContainer = useRef(null);
   function showOverLay() {
@@ -24,23 +25,25 @@ function Card({
       onMouseLeave={hideOverLay}
       className="card-wrapper"
     >
-      <div className="card js-card">
-        <div className="card__logo">{cardImage}</div>
-        <h2 className="card__title">{cardTitle}</h2>
-        <p className="card__text">{cardText}</p>
-        <div
-          ref={overlayContainer}
-          className="card__overlay js-card__overlay card-overlay1"
-          style={{
-            color: `${overLayTextColor}`,
-            backgroundColor: `${overLayBG}`,
-          }}
-        >
-          <h2 className="card__overlay-text js-card__overlay-text">
-            {overLayText}
-          </h2>
+      <a href={link}>
+        <div className="card js-card">
+          <div className="card__logo">{cardImage}</div>
+          <h2 className="card__title">{cardTitle}</h2>
+          <p className="card__text">{cardText}</p>
+          <div
+            ref={overlayContainer}
+            className="card__overlay js-card__overlay card-overlay1"
+            style={{
+              color: `${overLayTextColor}`,
+              backgroundColor: `${overLayBG}`,
+            }}
+          >
+            <h2 className="card__overlay-text js-card__overlay-text">
+              {overLayText}
+            </h2>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
   );
 }
@@ -52,6 +55,7 @@ Card.propTypes = {
   overLayText: PropTypes.string.isRequired,
   overLayTextColor: PropTypes.string.isRequired,
   overLayBG: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
 };
 
 export default Card;

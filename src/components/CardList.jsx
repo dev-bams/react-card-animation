@@ -11,6 +11,7 @@ function CardList() {
       cardID,
       overLayTextColor,
       overLayBG,
+      link,
     }) => {
       return (
         <Card
@@ -22,6 +23,7 @@ function CardList() {
           cardID={cardID}
           overLayTextColor={overLayTextColor}
           overLayBG={overLayBG}
+          link={link}
         />
       );
     }
