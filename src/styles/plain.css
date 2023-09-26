@@ -71,34 +71,26 @@ body {
 }
 .card__overlay {
   width: 100%;
-  height: var(--card-height);
-  /* color: var(--overlay-text-color);
-  background-color: var(--overlay-bg); */
+  height: 100%;
   position: absolute;
-  top: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: top var(--main-animation-duration);
+  transition: all var(--main-animation-duration);
+  top: 100%;
+  opacity: 0;
 }
-.card__overlay--active {
-  top: 0%;
-}
-
-/*
 .card__overlay-text {
   position: absolute;
-  transform: translateY(0%);
   top: 100%;
   transition: all calc(var(--main-animation-duration) / 1.1);
   transition-delay: calc(var(--main-animation-duration) / 4);
 }
-
-.card__overlay.card--active {
-  top: 0;
+.card__overlay.card__overlay--active {
+  top: 0%;
   opacity: 1;
 }
-.card__overlay-text.card--active {
-  transform: translateY(-50%);
+.card__overlay-text.card__overlay--active {
   top: 50%;
-} */
+  transform: translateY(-50%);
+}

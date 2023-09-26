@@ -8,16 +8,21 @@ function Card({
   overLayText,
   overLayTextColor,
   overLayBG,
-  link
+  link,
 }) {
   const overlayContainer = useRef(null);
+  const overLayTextContainer = useRef(null);
   function showOverLay() {
     const overLayElem = overlayContainer.current;
+    const overLayTextElem = overLayTextContainer.current;
     overLayElem.classList.add("card__overlay--active");
+    overLayTextElem.classList.add("card__overlay--active");
   }
   function hideOverLay() {
     const overLayElem = overlayContainer.current;
+    const overLayTextElem = overLayTextContainer.current;
     overLayElem.classList.remove("card__overlay--active");
+    overLayTextElem.classList.remove("card__overlay--active");
   }
   return (
     <div
@@ -32,13 +37,13 @@ function Card({
           <p className="card__text">{cardText}</p>
           <div
             ref={overlayContainer}
-            className="card__overlay js-card__overlay card-overlay1"
+            className="card__overlay"
             style={{
               color: `${overLayTextColor}`,
               backgroundColor: `${overLayBG}`,
             }}
           >
-            <h2 className="card__overlay-text js-card__overlay-text">
+            <h2 ref={overLayTextContainer} className="card__overlay-text">
               {overLayText}
             </h2>
           </div>
