@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 
 function Card({
@@ -10,24 +10,16 @@ function Card({
   overLayBG,
   link,
 }) {
-  const overlayContainer = useRef(null);
-  const overLayTextContainer = useRef(null);
-  function showOverLay() {
-    const overLayElem = overlayContainer.current;
-    const overLayTextElem = overLayTextContainer.current;
-    overLayElem.classList.add("card__overlay--active");
-    overLayTextElem.classList.add("card__overlay--active");
+  const [isOverLayActive, setIsOverLayActive] = useState(false);
+
+  function toggleOverLay() {
+    setIsOverLayActive(!isOverLayActive);
   }
-  function hideOverLay() {
-    const overLayElem = overlayContainer.current;
-    const overLayTextElem = overLayTextContainer.current;
-    overLayElem.classList.remove("card__overlay--active");
-    overLayTextElem.classList.remove("card__overlay--active");
-  }
+
   return (
     <div
-      onMouseEnter={showOverLay}
-      onMouseLeave={hideOverLay}
+      onMouseEnter={toggleOverLay}
+      onMouseLeave={toggleOverLay}
       className="card-wrapper"
     >
       <a
@@ -41,14 +33,19 @@ function Card({
           <h2 className="card__title">{cardTitle}</h2>
           <p className="card__text">{cardText}</p>
           <div
-            ref={overlayContainer}
-            className="card__overlay"
+            className={`card__overlay ${
+              isOverLayActive ? "card__overlay--active" : ""
+            }`}
             style={{
               color: `${overLayTextColor}`,
               backgroundColor: `${overLayBG}`,
             }}
           >
-            <h1 ref={overLayTextContainer} className="card__overlay-text">
+            <h1
+              className={`card__overlay-text ${
+                isOverLayActive ? "card__overlay--active" : ""
+              }`}
+            >
               {overLayText}
             </h1>
           </div>
